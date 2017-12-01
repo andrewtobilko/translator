@@ -101,7 +101,7 @@ Temporary Items
 .apdisk
 ### Gradle template
 .gradle
-/build/
+*/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -118,3 +118,6 @@ gradle-app.setting
 .gitignore
 .idea/
 *.iml
+
+# Ignore Node modules
+node_modules/
