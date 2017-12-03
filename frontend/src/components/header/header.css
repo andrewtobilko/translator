@@ -1,0 +1,16 @@
+.header {
+    width: 100%;
+}
+
+.header div, nav {
+    display: inline-block;
+    width: 50%;
+}
+
+nav {
+    text-align: right;
+}
+
+nav a {
+    padding: 10px;
+}
