@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './header.css'
+import {Link} from "react-router-dom";
 
 class Header extends Component {
     render() {
@@ -7,9 +8,9 @@ class Header extends Component {
             <div className="header">
                 <div>LOGO</div>
                 <nav>
-                    <a href="/">Home</a>
-                    <a href="/request/translate">Translate</a>
-                    <a href="/request/improve">Improve</a>
+                    <Link to="/">Home</Link>
+                    <Link to={{pathname: "/request", state: {type: "translate"}}}>Translate</Link>
+                    <Link to={{pathname: "/request", state: {type: "improve"}}}>Improve</Link>
                 </nav>
             </div>
         );
