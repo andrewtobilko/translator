@@ -5,6 +5,7 @@ import com.tobilko.translator.account.Account;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
 /**
@@ -17,6 +18,7 @@ public class Request {
     @GeneratedValue
     private Long id;
 
+    @ManyToOne
     private Account author;
     private LocalDateTime publicationDateTime;
 
