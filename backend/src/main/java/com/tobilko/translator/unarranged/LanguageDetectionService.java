@@ -11,6 +11,9 @@ import java.util.Optional;
 import static java.util.Comparator.comparingDouble;
 
 /**
+ *
+ * https://cloud.google.com/docs/authentication/getting-started
+ *
  * Created by Andrew Tobilko on 12/4/17.
  */
 @Service

@@ -3,7 +3,8 @@ package com.tobilko.translator.configuration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
-import com.tobilko.translator.unarranged.JsonPropertyResolver;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,19 +14,22 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BeanConfiguration {
 
-    @Bean
+    @Bean(name = BeanName.TRANSLATE_SERVICE)
     public Translate getGoogleTranslateService() {
         return TranslateOptions.getDefaultInstance().getService();
     }
 
-    @Bean("mapper")
+    @Bean(name = BeanName.OBJECT_MAPPER)
     public ObjectMapper getObjectMapper() {
         return new ObjectMapper();
     }
 
-    @Bean
-    public JsonPropertyResolver getJsonPropertyResolver(ObjectMapper mapper) {
-        return new JsonPropertyResolver(mapper);
+    @NoArgsConstructor(access = AccessLevel.PRIVATE)
+    private final static class BeanName {
+
+        public static final String TRANSLATE_SERVICE = "translateService";
+        public static final String OBJECT_MAPPER = "mapper";
+
     }
 
 }
