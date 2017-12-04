@@ -1,8 +1,6 @@
 package com.tobilko.translator.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.cloud.translate.Translate;
-import com.google.cloud.translate.TranslateOptions;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -13,11 +11,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class BeanConfiguration {
-
-    @Bean(name = BeanName.TRANSLATE_SERVICE)
-    public Translate getGoogleTranslateService() {
-        return TranslateOptions.getDefaultInstance().getService();
-    }
 
     @Bean(name = BeanName.OBJECT_MAPPER)
     public ObjectMapper getObjectMapper() {
