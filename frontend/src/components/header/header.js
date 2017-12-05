@@ -9,6 +9,7 @@ class Header extends Component {
                 <div>LOGO</div>
                 <nav>
                     <Link to="/">Home</Link>
+                    <Link to="/account">Account</Link>
                     <Link to={{pathname: "/request", state: {type: "translate"}}}>Translate</Link>
                     <Link to={{pathname: "/request", state: {type: "improve"}}}>Improve</Link>
                 </nav>
