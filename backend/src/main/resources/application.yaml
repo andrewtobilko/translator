@@ -13,3 +13,6 @@ spring:
     url: jdbc:mysql://localhost:3306/translator
     username: andrew
     password: tobilko
+  security:
+    realm-name: application-realm
+    encoding-strength: 256
