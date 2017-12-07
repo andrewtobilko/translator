@@ -28,19 +28,19 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Value("${spring.configuration.security.encoding-strength}")
+    @Value("${spring.security.encoding-strength}")
     private int encodingStrength;
 
-    @Value("${spring.configuration.security.realm-name}")
+    @Value("${spring.security.realm-name}")
     private String realmName;
 
-    @Value("${spring.configuration.security.signing-key}")
+    @Value("${spring.security.signing-key}")
     private String signingKey;
 
     private final UserDetailsService userDetailsService;
 
-    @Bean // todo : should it be?
     @Override
+    @Bean(name = "authenticationManager")
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }

@@ -14,8 +14,14 @@ spring:
     username: andrew
     password: tobilko
   security:
-    configuration:
-      security:
-        realm-name: application-realm
-        encoding-strength: 256
-        signing-key=MaYzkSjmkzPC57L
+    realm-name: application-realm
+    encoding-strength: 256
+    signing-key: MaYzkSjmkzPC57L
+    jwt:
+      client-id: andrew
+      client-secret: tobilko
+      grant-type: password
+      scope:
+        - read
+        - write
+      resource-ids: resourcesids
