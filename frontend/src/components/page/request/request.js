@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import './request.css'
-import {bindActionCreators} from 'redux'
-import {fetchRequests} from "../../../actions";
-import {connect} from "react-redux";
 
 class RequestPage extends Component {
 
@@ -16,14 +13,14 @@ class RequestPage extends Component {
     onFormSubmit(event) {
         event.preventDefault();
 
-        this.props.fetchRequests();
-        // todo : move fetchRequests to the home page
+        // todo
     }
 
     render() {
         return (
             <div>
-                <div className="request-type">Request type: {this.props.match.params.type}</div>
+                <div className="request-type">Request type: TYPE</div>
+                {/* todo : request type */}
                 <div>
                     Language: (try to figure out before it is shown)
                 </div>
@@ -39,8 +36,4 @@ class RequestPage extends Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({fetchRequests}, dispatch);
-}
-
-export default connect(null, mapDispatchToProps)(RequestPage)
+export default RequestPage;
